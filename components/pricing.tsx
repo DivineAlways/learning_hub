@@ -25,7 +25,7 @@ export function Pricing() {
           <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-purple-500/30 shadow-xl shadow-purple-900/10">
             <div className="text-center mb-8">
               <div className="text-5xl font-bold mb-4">
-                <span className="text-purple-400">$200</span>
+                <span className="text-purple-400">$250</span>
               </div>
               <p className="text-gray-400">Complete website package</p>
             </div>
