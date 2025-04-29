@@ -20,7 +20,7 @@ export function Footer() {
             <SocialLink href="https://twitter.com" icon={<Twitter className="h-5 w-5" />} label="Twitter" />
             <SocialLink href="https://github.com" icon={<Github className="h-5 w-5" />} label="GitHub" />
             <SocialLink href="https://linkedin.com" icon={<Linkedin className="h-5 w-5" />} label="LinkedIn" />
-            <SocialLink href="mailto:contact@lowperry.com" icon={<Mail className="h-5 w-5" />} label="Email" />
+            <SocialLink href="mailto:onlyweb3.0@gmail.com" icon={<Mail className="h-5 w-5" />} label="Email" />
           </div>
         </div>
 
@@ -43,7 +43,7 @@ export function Footer() {
 
 function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
   return (
-    <Link
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -51,6 +51,6 @@ function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode
       aria-label={label}
     >
       {icon}
-    </Link>
+    </a>
   )
 }

@@ -1,4 +1,4 @@
-import { Code, Globe, Database, Zap } from "lucide-react"
+import { Code, Globe, Database, Server } from "lucide-react"
 
 export function Services() {
   const services = [
@@ -18,7 +18,7 @@ export function Services() {
       description: "Powerful database solutions included at no extra cost when your project requires it.",
     },
     {
-      icon: <Zap className="h-10 w-10 text-purple-400" />,
+      icon: <Server className="h-10 w-10 text-purple-400" />,
       title: "Free Hosting",
       description: "Worry-free hosting included with every website, ensuring your site stays fast and reliable.",
     },

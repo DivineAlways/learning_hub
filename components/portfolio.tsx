@@ -5,35 +5,36 @@ import { ExternalLink } from "lucide-react"
 export function Portfolio() {
   const projects = [
     {
-      title: "Artisan Bakery",
+      title: "Real Estate Search Platform",
       description:
-        "An e-commerce website for a local bakery featuring online ordering, product catalog, and customer reviews.",
-      image: "/dark-bakery-modern.png",
-      link: "https://bakery-example.com",
-      tags: ["E-commerce", "Food & Beverage"],
+        "A comprehensive real estate search platform with property listings, advanced filtering options, and detailed property information for home buyers.",
+      image: "/real-estate-homepage.jpg",
+      link: "https://v0-fork-of-real-estate-alpha.vercel.app/",
+      tags: ["Real Estate", "Search Platform", "Property Listings"],
     },
     {
-      title: "Fitness Studio",
+      title: "Alexus Realty Funding",
       description:
-        "Membership portal for a fitness studio with class scheduling, trainer profiles, and integrated payment system.",
-      image: "/dark-purple-fitness.png",
-      link: "https://fitness-example.com",
-      tags: ["Membership", "Health & Wellness"],
+        "A modern website for a real estate funding company showcasing various financing options including purchase loans, refinancing, and renovation loans.",
+      image: "/alexus-realty.jpg",
+      link: "https://v0-alexus.vercel.app/",
+      tags: ["Real Estate", "Funding Solutions", "Finance"],
     },
     {
-      title: "Legal Consultant",
+      title: "Agnosia Blockchain/Crypto E-commerce",
       description:
-        "Professional website for a law firm with service information, team profiles, and appointment booking functionality.",
-      image: "/elegant-law-firm.png",
-      link: "https://legal-example.com",
-      tags: ["Professional Services", "Booking System"],
+        "A sleek e-commerce platform focused on blockchain and cryptocurrency products. Currently working on this project to implement advanced features and functionality.",
+      image: "/blk-ecommerce.png",
+      link: "https://v0-blk-e-commerce.vercel.app/",
+      tags: ["E-commerce", "Blockchain", "Cryptocurrency"],
     },
     {
-      title: "Tech Startup",
-      description: "Dynamic website for a SaaS company featuring product demos, pricing plans, and user testimonials.",
-      image: "/neon-cityscape-interface.png",
-      link: "https://tech-example.com",
-      tags: ["SaaS", "Technology"],
+      title: "Crypto Learning Hub",
+      description:
+        "An educational platform about cryptocurrency with comprehensive guides, market information, and learning resources for beginners and experts.",
+      image: "/crypto-learning.png",
+      link: "https://crypto-learning.vercel.app/",
+      tags: ["Cryptocurrency", "Education", "Finance"],
     },
   ]
 
