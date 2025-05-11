@@ -7,12 +7,18 @@ export function Footer() {
     <footer className="bg-gray-900 border-t border-gray-800 py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center">
-          <p className="text-gray-400 mb-6">
-            Email:{" "}
-            <a href="mailto:onlyweb3.0@gmail.com" className="text-purple-400 hover:text-purple-300">
-              onlyweb3.0@gmail.com
-            </a>
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
+            <p className="text-gray-400">
+              Email:{" "}
+              <a href="mailto:onlyweb3.0@gmail.com" className="text-purple-400 hover:text-purple-300">
+                onlyweb3.0@gmail.com
+              </a>
+            </p>
+            <Link href="/referral" className="text-purple-400 hover:text-purple-300 flex items-center gap-1">
+              <span>Join Our Referral Program</span>
+              <span className="bg-purple-500 text-white text-xs px-2 py-0.5 rounded-full">Earn $50</span>
+            </Link>
+          </div>
 
           <div className="border-t border-gray-800 w-full pt-8 mt-4 text-center">
             <Link href="/" className="text-2xl font-bold text-purple-400 block mb-2">

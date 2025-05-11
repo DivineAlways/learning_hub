@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0f1116;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top: 4px solid #8b5cf6;
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 1rem;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .button {
+      background-color: #8b5cf6;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="spinner"></div>
+    <h1>Processing your referral...</h1>
+    <p>You'll be redirected to the homepage in a moment.</p>
+    <p>If you're not redirected automatically, <a href="/" class="button">click here</a>.</p>
+  </div>
+
+  <script>
+    // Get the referral code from the URL
+    const pathParts = window.location.pathname.split('/');
+    const code = pathParts[pathParts.length - 1];
+    
+    if (code) {
+      // Make a request to your API to track the click
+      fetch(`/api/track-referral?code=${code}`)
+        .then(response => {
+          // Redirect to homepage regardless of response
+          window.location.href = '/';
+        })
+        .catch(error => {
+          console.error('Error tracking referral:', error);
+          // Redirect to homepage even if there's an error
+          window.location.href = '/';
+        });
+    } else {
+      // If no code is found, redirect to homepage
+      window.location.href = '/';
+    }
+  </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Users } from "lucide-react"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -47,6 +47,12 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
     { href: "#portfolio", label: "Portfolio" },
     { href: "#pricing", label: "Pricing" },
     { href: "#contact", label: "Contact" },
+    {
+      href: "/referral",
+      label: "Referrals",
+      highlight: true,
+      icon: <Users className="h-4 w-4" />,
+    },
   ]
 
   return (
@@ -55,10 +61,22 @@ function NavLinks({ mobile = false, onClick }: { mobile?: boolean; onClick?: () 
         <Link
           key={link.href}
           href={link.href}
-          className={`${mobile ? "block py-2" : ""} text-gray-300 hover:text-purple-400 transition-colors`}
+          className={`
+            ${mobile ? "block py-2" : ""} 
+            ${
+              link.highlight
+                ? "text-purple-400 hover:text-purple-300 flex items-center gap-1"
+                : "text-gray-300 hover:text-purple-400"
+            } 
+            transition-colors
+          `}
           onClick={onClick}
         >
+          {link.icon && link.icon}
           {link.label}
+          {link.highlight && (
+            <span className="bg-purple-600 text-white text-xs px-2 py-0.5 rounded-full ml-1">Earn $50</span>
+          )}
         </Link>
       ))}
     </>
