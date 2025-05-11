@@ -7,18 +7,21 @@ import { Pricing } from "@/components/pricing"
 import { Services } from "@/components/services"
 import { trackReferralClick } from "@/app/actions/referral"
 
-// This is a Server Component that can run server-side code
 export default async function Home({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams?: { [key: string]: string | string[] | undefined }
 }) {
   // Check if there's a referral code in the URL
-  const refCode = searchParams.ref as string
+  const refCode = searchParams?.ref as string | undefined
 
   if (refCode) {
-    // Track the click server-side
-    await trackReferralClick(refCode)
+    try {
+      // Track the click server-side
+      await trackReferralClick(refCode)
+    } catch (error) {
+      console.error("Error tracking referral click:", error)
+    }
   }
 
   return (

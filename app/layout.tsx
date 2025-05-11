@@ -2,8 +2,8 @@ import type React from "react"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
-import { ReferralTrackingScript } from "@/components/referral-tracking-script"
 import { Suspense } from "react"
+import { ReferralTrackingScript } from "@/components/referral-tracking-script"
 
 export const metadata: Metadata = {
   title: "Low Perry - Digital Visions, Pixel Perfect",

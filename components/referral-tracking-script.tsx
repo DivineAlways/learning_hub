@@ -22,9 +22,15 @@ export function ReferralTrackingScript() {
       }
 
       // Send a tracking request to the API
-      fetch(`/api/track-click?code=${refCode}`).catch((error) => {
-        console.error("Error tracking referral click:", error)
-      })
+      fetch(`/api/track-click?code=${refCode}`)
+        .then((response) => {
+          if (!response.ok) {
+            console.error("Error tracking click:", response.statusText)
+          }
+        })
+        .catch((error) => {
+          console.error("Error tracking referral click:", error)
+        })
     }
   }, [searchParams])
 

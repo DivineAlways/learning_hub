@@ -57,11 +57,24 @@ export async function generateReferralLink(referrerName: string, referrerEmail: 
 
   try {
     // Create a destination URL with tracking parameters
-    const destinationUrl = `${WEBSITE_URL}?ref=${referralCode}&utm_source=referral&utm_medium=tinyurl&utm_campaign=${referralCode}`
+    const destinationUrl = `${WEBSITE_URL}?ref=${referralCode}`
 
     // Create a TinyURL for the referral with tracking parameters
-    const tinyUrlResponse = await fetch("https://tinyurl.com/api-create.php?url=" + encodeURIComponent(destinationUrl))
-    const tinyUrl = await tinyUrlResponse.text()
+    let tinyUrl = ""
+    try {
+      const tinyUrlResponse = await fetch(
+        "https://tinyurl.com/api-create.php?url=" + encodeURIComponent(destinationUrl),
+      )
+      if (tinyUrlResponse.ok) {
+        tinyUrl = await tinyUrlResponse.text()
+      } else {
+        // Fallback if TinyURL fails
+        tinyUrl = destinationUrl
+      }
+    } catch (error) {
+      console.error("Error creating TinyURL:", error)
+      tinyUrl = destinationUrl
+    }
 
     const { data, error } = await supabase
       .from("lp_referrals")
@@ -90,7 +103,6 @@ export async function generateReferralLink(referrerName: string, referrerEmail: 
     return {
       success: true,
       publicId: publicId,
-      // Use TinyURL instead of our custom routes
       referralUrl: tinyUrl,
     }
   } catch (error) {
@@ -164,6 +176,8 @@ export async function markReferralAsPaid(referralId: string, paid: boolean) {
 
 // Track a referral click
 export async function trackReferralClick(code: string) {
+  if (!code) return { success: false, error: "No referral code provided" }
+
   const supabase = createServerSupabaseClient()
 
   try {
@@ -175,10 +189,15 @@ export async function trackReferralClick(code: string) {
     }
 
     // Update click count
-    await supabase
+    const { error: updateError } = await supabase
       .from("lp_referrals")
       .update({ clicks: data.clicks + 1 })
       .eq("id", data.id)
+
+    if (updateError) {
+      console.error("Error updating click count:", updateError)
+      return { success: false, error: "Failed to update click count" }
+    }
 
     return { success: true }
   } catch (error) {
