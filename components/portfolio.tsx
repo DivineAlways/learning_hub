@@ -5,18 +5,18 @@ import { ExternalLink } from "lucide-react"
 export function Portfolio() {
   const projects = [
     {
-      title: "Catering Business Website",
+      title: "Linda Soul Catering",
       description:
         "A professional catering business website featuring service showcases, menu displays, event galleries, and integrated booking system for seamless customer experience.",
-      image: "/catering-business.png",
+      image: "/linda-soul-catering.png",
       link: "https://v0-catering-business-website.vercel.app/",
       tags: ["Catering", "Business Website", "Event Services"],
     },
     {
-      title: "Real Estate Search Platform",
+      title: "Zena Gray Realty",
       description:
         "A comprehensive real estate search platform with property listings, advanced filtering options, and detailed property information for home buyers.",
-      image: "/real-estate-homepage.jpg",
+      image: "/zena-gray-realty.png",
       link: "https://v0-fork-of-real-estate-alpha.vercel.app/",
       tags: ["Real Estate", "Search Platform", "Property Listings"],
     },
@@ -24,7 +24,7 @@ export function Portfolio() {
       title: "Alexus Realty Funding",
       description:
         "A modern website for a real estate funding company showcasing various financing options including purchase loans, refinancing, and renovation loans.",
-      image: "/alexus-realty.jpg",
+      image: "/alexus-realty-funding.png",
       link: "https://v0-alexus.vercel.app/",
       tags: ["Real Estate", "Funding Solutions", "Finance"],
     },
