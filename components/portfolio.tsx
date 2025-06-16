@@ -5,6 +5,14 @@ import { ExternalLink } from "lucide-react"
 export function Portfolio() {
   const projects = [
     {
+      title: "Catering Business Website",
+      description:
+        "A professional catering business website featuring service showcases, menu displays, event galleries, and integrated booking system for seamless customer experience.",
+      image: "/catering-business.png",
+      link: "https://v0-catering-business-website.vercel.app/",
+      tags: ["Catering", "Business Website", "Event Services"],
+    },
+    {
       title: "Real Estate Search Platform",
       description:
         "A comprehensive real estate search platform with property listings, advanced filtering options, and detailed property information for home buyers.",

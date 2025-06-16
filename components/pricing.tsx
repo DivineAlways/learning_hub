@@ -9,6 +9,8 @@ export function Pricing() {
     { icon: <Server className="h-5 w-5 text-purple-400" />, text: "Free Hosting Included" },
     { icon: <Database className="h-5 w-5 text-purple-400" />, text: "Free Database (if needed)" },
     { icon: <Clock className="h-5 w-5 text-blue-400" />, text: "2 Weeks or Less Delivery" },
+    { icon: <Check className="h-5 w-5 text-green-400" />, text: "CRM System Integration" },
+    { icon: <Check className="h-5 w-5 text-green-400" />, text: "AI Voice Chat Agent" },
   ]
 
   return (
@@ -25,7 +27,7 @@ export function Pricing() {
           <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 border border-purple-500/30 shadow-xl shadow-purple-900/10">
             <div className="text-center mb-8">
               <div className="text-5xl font-bold mb-4">
-                <span className="text-purple-400">$250</span>
+                <span className="text-purple-400">$375</span>
               </div>
               <p className="text-gray-400">Complete website package</p>
             </div>
@@ -46,6 +48,8 @@ export function Pricing() {
                 <li>• Contact form integration</li>
                 <li>• Basic SEO optimization</li>
                 <li>• Social media integration</li>
+                <li>• CRM system for lead management</li>
+                <li>• AI-powered voice chat agent</li>
                 <li>• 1 round of revisions</li>
               </ul>
             </div>

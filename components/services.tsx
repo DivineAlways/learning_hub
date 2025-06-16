@@ -1,4 +1,4 @@
-import { Code, Globe, Database, Server } from "lucide-react"
+import { Code, Globe, Database, Server, Users, MessageCircle } from "lucide-react"
 
 export function Services() {
   const services = [
@@ -11,6 +11,17 @@ export function Services() {
       icon: <Code className="h-10 w-10 text-purple-400" />,
       title: "Web Development",
       description: "Clean, efficient code that brings your design to life with seamless functionality.",
+    },
+    {
+      icon: <Users className="h-10 w-10 text-purple-400" />,
+      title: "CRM System Integration",
+      description:
+        "Powerful customer relationship management system to track leads, manage clients, and grow your business.",
+    },
+    {
+      icon: <MessageCircle className="h-10 w-10 text-purple-400" />,
+      title: "AI Voice Chat Agent",
+      description: "Intelligent AI-powered voice assistant to handle customer inquiries and provide 24/7 support.",
     },
     {
       icon: <Database className="h-10 w-10 text-purple-400" />,
@@ -34,7 +45,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
