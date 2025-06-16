@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
 import { Suspense } from "react"
 import { ReferralTrackingScript } from "@/components/referral-tracking-script"
+import { ElevenLabsWidget } from "@/components/elevenlabs-widget"
 
 export const metadata: Metadata = {
   title: "Low Perry - Digital Visions, Pixel Perfect",
@@ -25,6 +26,7 @@ export default function RootLayout({
             <ReferralTrackingScript />
           </Suspense>
           {children}
+          <ElevenLabsWidget />
         </ThemeProvider>
       </body>
     </html>
